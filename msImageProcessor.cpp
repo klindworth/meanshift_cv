@@ -2398,7 +2398,7 @@ void msImageProcessor::TransitiveClosure( void )
 
 	//Traverse RAM attempting to join raList[i] with its neighbors...
 	int		i, iCanEl, neighCanEl;
-	float	threshold;
+	//float	threshold;
 	RAList	*neighbor;
 	for(i = 0; i < regionCount; i++)
 	{
@@ -2408,10 +2408,10 @@ void msImageProcessor::TransitiveClosure( void )
 
 		//compute edge strenght threshold using global and local
 		//epsilon
-		if(epsilon > raList[i].edgeStrength)
+		/*if(epsilon > raList[i].edgeStrength)
 			threshold   = epsilon;
 		else
-			threshold   = raList[i].edgeStrength;
+			threshold   = raList[i].edgeStrength;*/
 
 		//traverse region adjacency list of region i, attempting to join
 		//it with regions whose mode is a normalized distance < 0.5 from
@@ -2547,7 +2547,7 @@ void msImageProcessor::TransitiveClosure( void )
 	}
 
 	//re-assign region count using label counter
-	int	oldRegionCount	= regionCount;
+	//int	oldRegionCount	= regionCount;
 	regionCount	= label+1;
 
 	// (c)
@@ -2768,7 +2768,7 @@ void msImageProcessor::Prune(int minRegion)
 	int	*label_buffer		= new int	[regionCount];
 	
 	//Declare variables
-	int		i, k, candidate, iCanEl, neighCanEl, iMPC, label, oldRegionCount, minRegionCount;
+	int		i, k, candidate, iCanEl, neighCanEl, iMPC, label, /*oldRegionCount,*/ minRegionCount;
 	double	minSqDistance, neighborDistance;
 	RAList	*neighbor;
 	
@@ -2962,7 +2962,7 @@ void msImageProcessor::Prune(int minRegion)
 		}
 		
 		//re-assign region count using label counter
-		oldRegionCount	= regionCount;
+		//oldRegionCount	= regionCount;
 		regionCount		= label+1;
 		
 		// (c)

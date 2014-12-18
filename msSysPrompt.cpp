@@ -220,7 +220,7 @@ void msSystem::Prompt(const char *PromptStr, ...)
 //      or program one must re-implement this method.
 ///////////////////////////////////////////////////////////////////
 
-ErrorLevel msSystem::Progress(float percentComplete)
+ErrorLevel msSystem::Progress(float /*percentComplete*/)
 {
 	return EL_OKAY;
 }
